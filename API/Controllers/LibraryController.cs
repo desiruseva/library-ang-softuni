@@ -46,7 +46,7 @@ namespace API.Controllers
                 </html>
             """;
 
-            EmailService.SendEmail(user.Email, subject, body);
+           // EmailService.SendEmail(user.Email, subject, body);
 
             return Ok(@"Thank you for registering. 
                         Your account has been sent for aprooval. 
@@ -236,15 +236,15 @@ namespace API.Controllers
                     user.AccountStatus = AccountStatus.ACTIVE;
                     Context.SaveChanges();
 
-                    EmailService.SendEmail(user.Email, "Account Approved", $"""
-                        <html>
-                            <body>
-                                <h2>Hi, {user.FName} {user.LName}</h2>
-                                <h3>You Account has been approved by admin.</h3>
-                                <h3>Now you can login to your account.</h3>
-                            </body>
-                        </html>
-                    """);
+                    // EmailService.SendEmail(user.Email, "Account Approved", $"""
+                    //     <html>
+                    //         <body>
+                    //             <h2>Hi, {user.FName} {user.LName}</h2>
+                    //             <h3>You Account has been approved by admin.</h3>
+                    //             <h3>Now you can login to your account.</h3>
+                    //         </body>
+                    //     </html>
+                    // """);
 
                     return Ok("approved");
                 }
